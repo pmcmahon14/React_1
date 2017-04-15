@@ -9,14 +9,24 @@
     <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
     <!--add reference to Babel JS compiler/turn JSX into JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-    <script type="text/babel">
-        ReactDOM.render (
-        <h1>Patrick McMahon</h1>,
-        document.body
-    );
-    </script>
 </head>
 <body>
-
+    <!--creates new container to separate React from other JS-->
+    <div id="container"></div>
+    <script type="text/babel">
+        ReactDOM.render (
+            <h1>Patrick McMahon</h1>,
+            document.querySelector('#container')
+        );
+    </script>
+    <p>Or,</p>
+    <div id="container2"></div>
+    <script type="text/babel">
+        var destination = document.querySelector('#container2');
+        ReactDOM.render (
+            <h1>Patrick McMahon2</h1>,
+            destination
+        );
+    </script>
 </body>
 </html>
