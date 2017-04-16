@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Components</title>
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+    <script type="text/babel">
+        var HelloWorld = React.createClass ({
+            render: function () {
+                return (
+                    //where props access a property (call an argument in JS)
+                    <p>Hello, {this.props.greetTarget}!</p>
+                );
+            }
+        });
+        //similar to calling a function in JS
+        ReactDOM.render (
+            <div>
+                <HelloWorld greetTarget="Patrick"/>
+                <HelloWorld greetTarget="Dawn"/>
+                <HelloWorld greetTarget="Sierra"/>
+                <HelloWorld greetTarget="Finn"/>
+                <HelloWorld greetTarget="Tuscany"/>
+                <HelloWorld greetTarget="Olympia"/>
+            </div>,
+            document.querySelector('#container')
+        );
+    </script>
+
+</body>
+</html>

@@ -39,14 +39,17 @@
             destination
         );
     </script>
+
+    <!--div wrapper must wrap h1 elements here because this can only output one element-->
+
     <script type="text/babel">
         var destination2 = document.querySelector('#container');
         ReactDOM.render (
             <div>
-                <h1>Patrick McMahon</h1>
-                <h1>Dawn</h1>
-                <h1>Sierra</h1>
-                <h1>Finn</h1>
+                <h3><i>Patrick McMahon</i></h3>
+                <h3><i>Dawn</i></h3>
+                <h3><i>Sierra</i></h3>
+                <h3><i>Finn</i></h3>
             </div>,
             destination2
         );
