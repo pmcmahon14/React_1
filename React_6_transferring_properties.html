@@ -21,13 +21,20 @@
                 );
             }
         });
+
+        //depends on output of Display
+
         var Label = React.createClass ({
             render: function() {
                 return(
+                    //uses spread operator to unwrap array in Display
                     <Display {...this.props}/>
                 );
             }
         });
+
+        //Depends on output of Label
+
         var Shirt = React.createClass ({
             render: function() {
                 return(
