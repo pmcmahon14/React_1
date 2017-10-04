@@ -17,6 +17,8 @@
 <body>
     <div id="container"></div>
     <script type="text/babel">
+
+        //set variable equal to JSX styling (self-contained unit) for all letters defined in variable destination farther below
         var Letter = React.createClass({
             render: function() {
                 var letterStyle = {
@@ -29,6 +31,8 @@
                 fontSize: '32',
                 textAlign: 'center'
             };
+
+                //sets up props to display for each letter background in below destination
                 return (
                     <div style={letterStyle}>
                         {this.props.children}
@@ -36,6 +40,8 @@
                 );
             }
         });
+
+        //sets up JSX to display each letter block as defined in Letter above but use unique background color for each block
 
         var destination = document.querySelector("#container");
         ReactDOM.render (
