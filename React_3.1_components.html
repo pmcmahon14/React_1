@@ -10,6 +10,10 @@
 <body>
 <div id="container"></div>
 <script type="text/babel">
+
+    //BASED ON ES5
+
+    //create component with React.createClass
     var HelloWorld = React.createClass ({
         render: function () {
             return (
@@ -18,7 +22,9 @@
             );
         }
     });
+
     //similar to calling a function in JS
+    //can only output one element; can have as many children as necessary
     ReactDOM.render (
             <div>
                 <HelloWorld greetTarget="Patrick"/>
