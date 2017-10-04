@@ -16,6 +16,9 @@
 <body>
     <div id="container"></div>
     <script type="text/babel">
+
+        //builds top part of card, displays color
+
         var Square = React.createClass({
             render: function() {
                 var squareStyle = {
@@ -27,6 +30,9 @@
                 );
             }
         });
+
+        //builds bottom part of card, displays hexadecimal color of Square
+
         var Label = React.createClass({
             render: function() {
                 var labelStyle = {
@@ -40,6 +46,9 @@
                 );
             }
         });
+
+        //builds entire card and returns both components of card face
+
         var Card = React.createClass({
             render: function() {
                 var cardStyle = {
@@ -58,6 +67,8 @@
                 );
             }
         });
+
+        //has chosen card color
 
         ReactDOM.render (
             <div>
