@@ -17,7 +17,7 @@
     var HelloWorld = React.createClass ({
         render: function () {
             return (
-                    //where props access a property (call an argument in JS)
+                    //where props accesses a property (call an argument in JS)
                     //curly brackets for expression
                     <p>Hello, {this.props.greetTarget}!</p>
             );
@@ -25,7 +25,7 @@
     });
 
     //similar to calling a function in JS
-    //can only output one element; can have as many children as necessary
+    //can only output one element; can have as many children as necessary, so div below is necessary to output the names
     ReactDOM.render (
             <div>
                 <HelloWorld greetTarget="Patrick"/>
