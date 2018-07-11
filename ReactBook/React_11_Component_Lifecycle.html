@@ -9,7 +9,7 @@
 </head>
 <body>
 <script type="text/babel">
-    var counterParent = React.createClass({
+    var CounterParent = React.createClass({
         getDefaultProps: function() {
             console.log("getDefaultProps: Default prop time!");
             return{};
@@ -47,7 +47,7 @@
             console.log("shouldComponentUpdate: Component should update!");
             return true;
             } else {
-            React.DOM.unmountComponentAtNode(destination);
+            ReactDOM.unmountComponentAtNode(destination);
             console.log("shouldComponentUpdate: Component should not update!");
             return false;
         }
