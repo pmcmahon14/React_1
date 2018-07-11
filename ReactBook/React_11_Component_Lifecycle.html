@@ -8,7 +8,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 </head>
 <body>
+<div id="container">
+
+</div>
 <script type="text/babel">
+    var destination = document.querySelector('#container');
     var CounterParent = React.createClass({
         getDefaultProps: function() {
             console.log("getDefaultProps: Default prop time!");

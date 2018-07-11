@@ -8,6 +8,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 </head>
 <body>
+<script type="text/babel">
+    render: function() {
+        var squareStyle = {
+            backgroundColor: this.state.bgColor
+        };
 
+        var self = this;
+
+        return(
+            <div className="colorArea">
+                <div style={squareStyle} className="colorSquare"></div>
+
+                <form onSubmit={this.setNewColor}>
+                    <input
+                        ref={
+                            function(el){
+                                self._input=el;
+                            }
+                        }
+                        onChange={this.colorValue}
+                        placeholder="Enter a color value">
+                    </input>
+                    <button type="submit">Go</button>
+                </form>
+            </div>
+        );
+    }
+</script>
 </body>
 </html>
