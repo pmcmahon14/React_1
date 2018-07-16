@@ -40,7 +40,7 @@
 <script type="text/babel">
     var destination = document.querySelector("#container");
     var TodoItems = React.createClass({
-        rednder: function() {
+        render: function(){
 
         }
     });
@@ -63,7 +63,7 @@
             this.setState({
                 items:itemArray
             });
-            //prevents possible reloading/POST action
+            //prevents triggering browser's default POST behavior which would refresh page
             e.preventDefault();
         },
         render: function() {
@@ -77,7 +77,7 @@
                             <button type="submit">add</button>
                         </form>
                     </div>
-                    <TodoItems/> entries{this.state.items}/>
+
                 </div>
             );
         }
