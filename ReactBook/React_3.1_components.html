@@ -9,6 +9,7 @@
 </head>
 <body>
 <div id="container"></div>
+<div id="container2"></div>
 <script type="text/babel">
 
     //BASED ON ES5
@@ -36,6 +37,26 @@
                 <HelloWorld greetTarget="Olympia"/>
             </div>,
             document.querySelector('#container')
+    );
+</script>
+
+<script type="text/babel">
+    var Hobbies = React.createClass({
+        render: function () {
+            return (
+                <p>I enjoy {this.props.hobbies}.</p>
+            );
+        }
+    });
+
+    ReactDOM.render  (
+        <div>
+            <Hobbies hobbies="coin collecting"/>
+            <Hobbies hobbies="auto racing"/>
+            <Hobbies hobbies="gardening"/>
+            <Hobbies hobbies="silent movies"/>
+        </div>,
+        document.querySelector("#container2")
     );
 </script>
 
