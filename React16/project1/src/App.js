@@ -14,18 +14,7 @@ class App extends Component {
         showPersons: false
     };
 
-    switchNameHandler = (newName) => {
-        //console.log('was clicked');
-        //DON'T DO THIS: this.state.persons[0].name = 'Patrick';
-        this.setState({
-            persons: [
-                {name: newName, age: 45},
-                {name: 'Dawn', age: 47},
-                {name: 'Mr. Finn', age: 4},
-                {name: 'Sierra', age: 14}
-            ]
-        })
-    };
+
 
     nameChangedHandler = (event) => {
         this.setState({
@@ -36,6 +25,12 @@ class App extends Component {
                 {name: 'Sierra', age: 14}
             ]
         })
+    };
+
+    deletePersonHandler = (personIndex) => {
+        const persons = this.state.persons;
+        persons.splice(personIndex, 1);
+        this.setState({persons: persons})
     };
 
     togglePersonsHandler = () => {
@@ -57,25 +52,12 @@ class App extends Component {
       if (this.state.showPersons) {
           persons = (
               <div>
-                  {this.state.persons.map(person => {
+                  {this.state.persons.map((person, index) => {
                       return <Person
+                          click={() => this.deletePersonHandler(index)}
                           name={person.name}
                           age={person.age} />
                   })}
-                  <Person
-                      name={this.state.persons[0].name}
-                      age={this.state.persons[0].age}>My hobbies: racing</Person>
-                  <Person
-                      name={this.state.persons[1].name}
-                      age={this.state.persons[1].age}
-                      changed={this.nameChangedHandler}>My hobbies: gardening</Person>
-                  <Person
-                      name={this.state.persons[2].name}
-                      age={this.state.persons[2].age}
-                      click={this.switchNameHandler}>My hobbies: making Finn noises</Person>
-                  <Person
-                      name={this.state.persons[3].name}
-                      age={this.state.persons[3].age}>My hobbies: looking cute</Person>
               </div>
           );
       }
@@ -86,7 +68,7 @@ class App extends Component {
         <p>This is really working!</p>
           <button
               style={style}
-              onClick={this.togglePersonsHandler}>Switch Name</button>
+              onClick={this.togglePersonsHandler}>Toggle Persons</button>
           {persons}
       </div>
     );
