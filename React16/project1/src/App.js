@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
-//import Radium, {StyleRoot} from 'radium';
 
 class App extends Component {
     state = {
@@ -52,7 +51,7 @@ class App extends Component {
           font: 'inherit',
           border: '1px solid blue',
           padding: '8px',
-          cursor: 'pointer',
+          cursor: 'pointer'
       };
 
       let persons = null;
@@ -71,6 +70,7 @@ class App extends Component {
               </div>
           );
 
+          style.bsckgroundColor = 'red';
       }
 
       const classes = [];
