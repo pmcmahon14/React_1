@@ -5,7 +5,31 @@ import Cockpit from '../components/Cockpit/Cockpit';
 //import ErrorBoundary from'./ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
-    state = {
+    constructor(props) {
+        super(props);
+        console.log('[App.js] Inside Constructor', props);
+        //This way of initializing state (in constructor) is older syntax
+        this.state = {
+            persons: [
+                {id: 'aa1', name: 'Patrick', age: 45},
+                {id: 'bb2', name: 'Dawn', age: 47},
+                {id: 'cc3', name: 'Finn', age: 4},
+                {id: 'dd4', name: 'Sierra', age: 14}
+            ],
+            otherState: 'some other value',
+            showPersons: false
+        };
+    }
+
+    componentWillMount() {
+        console.log('[App.js] Inside componentWillMount()');
+    }
+
+    componentDidMount() {
+        console.log('[App.js] Inside componentDidMount()');
+    }
+    //This way of initializing state is newer; may not see on many apps
+    /*state = {
         persons: [
             {id: 'aa1', name: 'Patrick', age: 45},
             {id: 'bb2', name: 'Dawn', age: 47},
@@ -14,7 +38,8 @@ class App extends Component {
         ],
         otherState: 'some other value',
         showPersons: false
-    };
+    };*/
+
 
 
 
@@ -47,6 +72,7 @@ class App extends Component {
     };
 
   render() {
+      console.log('[App.js] Inside render()');
       let persons = null;
 
       if (this.state.showPersons) {
