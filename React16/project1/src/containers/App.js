@@ -28,6 +28,20 @@ class App extends Component {
     componentDidMount() {
         console.log('[App.js] Inside componentDidMount()');
     }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('[UPDATE App.js] Inside shouldComponentUpdate', nextProps, nextState);
+        //return nextProps.persons === this.props.persons;
+        return true;
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        console.log('[UPDATE App.js] Inside componentWillUpdate', nextProps, nextState);
+    }
+
+    componentDidUpdate () {
+        console.log('[UPDATE App.js] Inside componentDidUpdate');
+    }
     //This way of initializing state is newer; may not see on many apps
     /*state = {
         persons: [
