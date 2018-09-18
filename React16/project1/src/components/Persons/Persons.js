@@ -20,9 +20,12 @@ class Persons extends Component {
         console.log('[UPDATE Persons.js] Inside componentWillReceiveProps', nextProps);
     }
 
-    /*shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate(nextProps, nextState) {
         console.log('[UPDATE Persons.js] Inside shouldComponentUpdate', nextProps, nextState);
-        return nextProps.persons === this.props.persons;
+        return nextProps.persons === this.props.persons ||
+            nextProps.changed === this.props.changed ||
+            nextProps.clicked === this.props.clicked;
+        //return true;
     }
 
     componentWillUpdate(nextProps, nextState) {
@@ -31,7 +34,7 @@ class Persons extends Component {
 
     componentDidUpdate () {
         console.log('[UPDATE Persons.js] Inside componentDidUpdate');
-    }*/
+    }
 
     render() {
         console.log('[Persons.js] Inside render()');
