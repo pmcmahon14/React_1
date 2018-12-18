@@ -7,5 +7,7 @@
 
 h1 {
     /*font-family: "SEGA LOGO FONT";*/
-    color: deepskyblue;
+    font-weight: 800;
+    /*color: deepskyblue;*/
+    color: #0ccac4;
 }
