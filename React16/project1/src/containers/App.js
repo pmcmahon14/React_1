@@ -3,7 +3,8 @@ import React, { PureComponent } from 'react';
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
-import WithClass from '../hoc/WithClass';
+import Aux1 from '../hoc/Aux1';
+import withClass from '../hoc/withClass';
 //import ErrorBoundary from'./ErrorBoundary/ErrorBoundary';
 
 class App extends PureComponent {
@@ -78,7 +79,7 @@ class App extends PureComponent {
     };
 
     deletePersonHandler = (personIndex) => {
-        const persons = this.state.persons;
+        const persons = [...this.state.persons];
         persons.splice(personIndex, 1);
         this.setState({persons: persons})
     };
@@ -101,7 +102,7 @@ class App extends PureComponent {
 
 
     return (
-      <WithClass classes={classes.App}>
+        <Aux1>
           <button onClick={() => {this.setState({showPersons: true})}}>Show Person</button>
           <Cockpit
               appTitle={this.props.title}
@@ -109,10 +110,10 @@ class App extends PureComponent {
               persons={this.state.persons}
               clicked={this.togglePersonsHandler}/>
           {persons}
-      </WithClass>
+        </Aux1>
     );
     //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'))
   }
 }
 
-export default App;
+export default withClass(App, classes.App);

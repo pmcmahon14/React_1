@@ -7,11 +7,11 @@ import UserOutput from './UserOutput/UserOutput';
 class App extends Component {
     state = {
         username: 'crazydude'
-    }
+    };
 
     usernameChangedHandler = (event) => {
         this.setState({username: event.target.value})
-    }
+    };
     render() {
     return (
       <div className="App">
