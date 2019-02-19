@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React</title>
+    <!--core React library-->
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <!--React can work with DOM-->
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <!--add reference to Babel JS compiler/turn JSX into JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+</head>
+<body>
+<div id="me"></div>
+
+<script type="text/babel">
+
+    function Me(props) {
+        return(
+        <div>
+            <h2>{props.name}</h2>
+            <p>{props.age}</p>
+            <h3>{props.hobbies}</h3>
+        </div>
+        )
+    }
+
+    const app = (
+        <div>
+            <Me name="Magoo"/>
+            <Me age="Ain't nothin' but a number!"/>
+            <Me hobbies="Nunya bidness!"/>
+        </div>
+    );
+
+    ReactDOM.render(
+          app, document.querySelector('#me')
+    )
+</script>
+</body>
+</html>
