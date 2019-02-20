@@ -39,6 +39,14 @@ class MainArea extends Component {
                     <Col sm={{ size: 'auto', offset: 1 }}>.col-sm-auto .offset-sm-1</Col>
                     <Col sm={{ size: 'auto', offset: 1 }}>.col-sm-auto .offset-sm-1</Col>
                 </Row>
+                <Row>
+                    <Col xs="2">Card</Col>
+                    <Col xs="2">Card</Col>
+                    <Col xs="2">Card</Col>
+                    <Col xs="2">Card</Col>
+                    <Col xs="2">Card</Col>
+                    <Col xs="2">Card</Col>
+                </Row>
             </Container>
         )
     }
