@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bootstrap</title>
+    <!--core React library-->
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <!--React can work with DOM-->
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <!--add reference to Babel JS compiler/turn JSX into JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 </head>
 <body>
+<div id="container"></div>
+
+<script type="text/babel">
+
+ReactDOM.render(
+    <div>
+        <Row>
+            <Col xs='6'>1 of 2</Col>
+            <Col xs='6'>2 of 2</Col>
+        </Row>
+        <Row>
+            <Col>1 of 3</Col>
+            <Col>2 of 3</Col>
+            <Col>3 of 3</Col>
+        </Row>
+    </div>
+    ,document.querySelector('#container')
+)
+</script>
 
 </body>
 </html>
